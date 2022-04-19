@@ -9,8 +9,7 @@ const commentSchema = mongoose.Schema({
   news: {
     ref: "News",
     type: mongoose.Schema.Types.ObjectId,
-
-  }
+  },
 });
 
 const Comment = mongoose.model("Comment", commentSchema);
