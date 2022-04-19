@@ -58,4 +58,14 @@ module.exports.userController = {
       console.log({ err });
     }
   },
+  addImage: async (req, res) => {
+    try {
+      const addImage = User.create({
+        image: req.file.path,
+      });
+      res.json(addImage);
+    } catch (e) {
+      res.json(`Ошибка в UserController=>AddImage${e.toString}`);
+    }
+  },
 };
