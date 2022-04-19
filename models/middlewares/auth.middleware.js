@@ -16,7 +16,6 @@ module.exports = async (req, res, next) => {
 
     req.user = await jwt.verify(token, process.env.SECRET_JWT_KEY);
 
-
     next();
   } catch (err) {
     console.log(res.status(401).json("Неверный токен"));
